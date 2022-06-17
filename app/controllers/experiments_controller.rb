@@ -58,7 +58,7 @@ class ExperimentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experiment
-      @experiment = Experiment.find(params[:id])
+      @experiment = Experiment.find_by!(key: params[:id])
     end
 
     # Only allow a list of trusted parameters through.

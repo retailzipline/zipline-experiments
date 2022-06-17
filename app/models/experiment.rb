@@ -7,6 +7,10 @@ class Experiment < ApplicationRecord
 
   before_validation :generate_key, on: :create
 
+  def to_param
+    key
+  end
+
   private
 
   def generate_key
