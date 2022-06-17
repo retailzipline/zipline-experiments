@@ -1,0 +1,32 @@
+default: &default
+  certificate: -----BEGIN CERTIFICATE-----MIIFZzCCA08CAQEwDQYJKoZIhvcNAQELBQAwdzELMAkGA1UEBhMCQ0ExEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xGzAZBgNVBAoTElJldGFpbCBaaXBsaW5lIEluYzEeMBwGA1UEAxMVUmV0YWlsIFppcGxpbmUgU1NMIENBMB4XDTE2MTAxMjAyMDU0N1oXDTE4MTAxMjAyMDU0N1owfDELMAkGA1UEBhMCQ0ExEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xGzAZBgNVBAoTElJldGFpbCBaaXBsaW5lIEluYzEjMCEGA1UEAxMac2FtbC1kZXYucmV0YWlsemlwbGluZS5jb20wggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDMgfPFZ21nGwz0u72zA8YLHd0+6RGVxNhIJEsxKqP97Et3UC9wjU8LwXg/Xka1MK+3Oc3yodOKhmyIwpRfB+QH03zgbaW5rF2ytp/95eaQrXk79j1Sjo1PKBPNYt3bQlcPUaxbpSEYuxiWPL4IuW7VrwJtWjxn1KTHQADatlvfPnOTkFvUR4zKaR52sUjVb82iiA92H2PeP4hn4xO8KaIYt02f9cIrxJPUBRX0pKRBJHTFedVjfb66f9gWItHMkuYh/U23jDzvTP5dwF1nU179vO+pXQbJGeWfiTBvQtZs02dXFNerSVEbD6nh4dvhbZR9HUNWMDJ1Cjti3n94voJxQ8lES8pEcan/1TvfYRRLPybup8jswE4+AxJlmc1vfjaOhz45MdLkOqvYzk3SCpnmoyqMZgUq5QJ49NfY9OvMnYdm7V7Vf9rhgT/lT1Haa2PcEtlnbASHvzb6493xXyLXc/i4gCoz0tnmFNpY5XE3ydqSlEi2Ki/xeeAlvaqcYmLRniGUW/1bOK/lJKX3NCpU4ZeJn+qu1hLdFXhxSHweg7R2SABhuq2xMLqgzP9JWnKEioWxWnkKrWyH6F47G9S7SUkC9BF6d902m5Zz0M1UjM8g7OM14CNCx5UM+GWC1gvfu2RkvjVpBxieSgnp4lrH0MPYBNHwy93dY6HA4K/swwIDAQABMA0GCSqGSIb3DQEBCwUAA4ICAQDHQLWCcoqCxqU/7zx3/EDcoN2txeoONpLW1fqED+GUCYjZUWj7BAKpclYXhmNuwdeuDgZAWYM/1+ZL2OO4mc0tjWt2Hw3nv1wNtaHP8UM+wVgEq5LH203cNewJL/Hpid356ExP5ZK4UITQzsufxcuSAzF0fksScdb33iG4QMbhiV533PABsUSBuGBcjpipJZJ/ZyNiOUnmJYVim7Ne8vOD8cs8uyyJRkZ0z3lERKIPDctS68c4TJnRiw5/iGTsbJkz3cNbAXII3HlLTL6whBtHteGfURhYCRHEWTA9PYmGTK6ZeBXo4UVm3nakNS3BtXAgY7DS5ZMkh6Ut/vge4GPV62O8dSgjSCz29GJPrWxHLdsteDssCuHUvLRa9Q4aI3v4ksN/DWdjgUadKd18/NlLkIqrXorZN6RtUE3Oz2yn2WMeCjyGz8egjucbgAMIW1/+D1l5DhUTQVW2F3fsnRjeOkVsMIwUuCznkuYY0ByLzSBuNG94N27/7pe+esSBNKxBeA5QXjekbhv2RT1uh4LgjWDBCEW0/NQu8rKqs+W8bksbojDdGZSLLKjkWa+owy6tYt1rll2TsDuYJT37jm3egEBbzp8cvC2aPheGETG3aczzFE8suILbE1afOWeFsVUwqK86/hp6zaz/gl8upDHQclLBOQFF4ufeYWxI4IKlHA==-----END CERTIFICATE-----
+  sp_entity_id: experiments.zipline.test
+  metadata: |
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://accounts.google.com/o/saml2?idpid=C02u5gt7o" validUntil="2021-02-15T05:59:31.000Z">
+      <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:KeyDescriptor use="signing">
+          <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+              <ds:X509Certificate>MIIDdDCCAlygAwIBAgIGAVLtz/TaMA0GCSqGSIb3DQEBCwUAMHsxFDASBgNVBAoTC0dvb2dsZSBJbmMuMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MQ8wDQYDVQQDEwZHb29nbGUxGDAWBgNVBAsTD0dvb2dsZSBGb3IgV29yazELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWEwHhcNMTYwMjE3MDU1OTMxWhcNMjEwMjE1MDU1OTMxWjB7MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEPMA0GA1UEAxMGR29vZ2xlMRgwFgYDVQQLEw9Hb29nbGUgRm9yIFdvcmsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn4SVyLJOZdafey8Ier4NfFilLS14OyR3rs7y3SySwmuvHwVAtFFzJFBmEcDYXTosaLnwurcAon1FhY7qYj5AR9WX+obduvEbHkExHHbj14IfwZZDW/t75XdXd8bPrCCnAHqiLQ1PxqWlBzzi80cFVHTAu0xoZwICDbNoHuDo5faTGznDSPoG8alIIu0EDsOOyGFeqluYqCctbwfOy5IawPLF8IidF+fdf61+Ih2uUZ+Sf3UsE9P+rFKRPUMncdaVmthJ56Mb4LbhmLJbDyDUmc24Q0U9uPg/iSwwV7nQJkL630FWP4v215c6VL/t1Wt7pIGpVbASTkrmwra8b6U3sQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAkQu1V+mda8SUr4fTl3C2lxjLFhi2zG+g5pD7jtvKyQpBpgYatSyG0k1J/bpKwnYZVrACM+3+L2do569Xs7s7VFyEsk3wK61/YRrmFXvQJInDlQCj7++irgl/JcRyv7fyQvi5K0Fd9SvtjO8eiOWO204ssymmxbmrTya3VkreXG8uVHgDFqc93y4agDbnNB5RDq2MtOfCWpfuLFcoDPCBkJvcO0JUcExzmDzblh4eB+8SxvAsqefNzu/Fk7bGA0tu0bOsBz2SbECRYJfFdcoTJju+ft8mH/J5xOB6Jpz9v95Hk5ofokxj0+nsPbqNIrMjPUu+qy1k8VvXJq2wksj91</ds:X509Certificate>
+            </ds:X509Data>
+          </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://accounts.google.com/o/saml2/idp?idpid=C02u5gt7o"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://accounts.google.com/o/saml2/idp?idpid=C02u5gt7o"/>
+      </md:IDPSSODescriptor>
+    </md:EntityDescriptor>
+  private_key: <%= Rails.application.credentials.google_saml.private_key %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  certificate: <%= ENV['GOOGLE_SAML_CERTIFICATE'] %>
+  metadata: <%= ENV['GOOGLE_SAML_METADATA'] %>
+  private_key: <%= ENV['GOOGLE_SAML_PRIVATE_KEY'] %>
+  sp_entity_id: <%= ENV['GOOGLE_SAML_ENTITY_ID'] %>

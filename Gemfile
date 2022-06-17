@@ -42,6 +42,9 @@ gem "bootsnap", require: false
 # Audit changes to core models
 gem 'audited'
 
+# Use ruby-saml for Single Sign-on
+gem 'ruby-saml', '1.12.2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
