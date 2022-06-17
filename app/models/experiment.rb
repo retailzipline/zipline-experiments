@@ -16,6 +16,6 @@ class Experiment < ApplicationRecord
   private
 
   def generate_key
-    SecureRandom.hex(3)
+    self[:key] = SecureRandom.hex(3)
   end
 end
