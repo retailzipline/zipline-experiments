@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  key: MyString
+  javascript: MyText
+  stylesheet: MyText
+  approved: false
+  created_by_user: one
+  updated_by_user: one
+
+two:
+  title: MyString
+  description: MyText
+  key: MyString
+  javascript: MyText
+  stylesheet: MyText
+  approved: false
+  created_by_user: two
+  updated_by_user: two
