@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  variables:
+    statement_timeout: 8000 # ms
+  prepared_statements: false
+  url:  <%= ENV["DATABASE_URL"] %>
+
+development:
+  primary:
+    <<: *default
+    gssencmode: "disable"
+    database: experiments
+
+test:
+  primary:
+    <<: *default
+    gssencmode: "disable"
+    database: experiments
+
+production:
+  primary:
+    <<: *default
+    pool: <%= ENV["DB_POOL"] || ENV["MAX_THREADS"] || 100 %>
+    variables:
+      statement_timeout: <%= ENV["DB_PRIMARY_TIMEOUT"] || 8000 %>
