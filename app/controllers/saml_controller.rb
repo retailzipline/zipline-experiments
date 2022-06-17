@@ -13,8 +13,11 @@ class SamlController < ApplicationController
     @saml_response = OneLogin::RubySaml::Response.new(params[:SAMLResponse], settings: saml_settings)
 
     if @saml_response.is_valid?
-      session.merge!(new_zipline_employee_session(@saml_response))
-      redirect_to system_root_path
+      user = user_from_response(@saml_response)
+
+      session.merge!(session_details_for_user(user))
+
+      redirect_to root_path
     else
       Rails.logger.warn("[SAML]") { "Invalid Response Errors - #{@saml_response.errors}" }
       render file: "public/401.html", layout: false, status: status
@@ -28,9 +31,7 @@ class SamlController < ApplicationController
     GoogleSamlConfiguration.new(url_base).settings
   end
 
-  def session_details_for_user(saml_response)
-    user = user_from_response(saml_response)
-
+  def session_details_for_user(user)
     {
       current_user_id: user.id,
       expires_at: 12.hours.from_now.to_i
