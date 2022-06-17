@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   post '/sso/saml/acs' => 'saml#acs', as: 'sso_saml_acs'
 
   resources :experiments
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  get '/exp/:id' => 'experiments#serve'
 
   # Defines the root path route ("/")
   root "experiments#index"

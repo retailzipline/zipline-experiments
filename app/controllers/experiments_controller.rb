@@ -1,7 +1,8 @@
 class ExperimentsController < ApplicationController
-  before_action :set_experiment, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user, only: %i[ serve ]
+  protect_from_forgery except: :serve
 
-  protect_from_forgery except: :show
+  before_action :set_experiment, only: %i[ show serve edit update destroy ]
 
   # GET /experiments
   def index
@@ -10,7 +11,13 @@ class ExperimentsController < ApplicationController
 
   # GET /experiments/1
   def show
+  end
 
+  def serve
+    respond_to do |format|
+      format.js {}
+      format.css {}
+    end
   end
 
   # GET /experiments/new
