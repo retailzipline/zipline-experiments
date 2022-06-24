@@ -1,10 +1,55 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @experiment %>
-
+<div class="row mt-4">
+  <div class="col-6">
+    <%= link_to experiments_path do %>
+      <i class="bi bi-chevron-left me-1"></i>
+      <span>Back to experiment</span>
+    <% end %>
+  </div>
+  <div class="col-6 text-end d-flex align-items-center justify-content-end">
+    <%= link_to "Edit", edit_experiment_path(@experiment), class: "btn btn-outline-primary me-2" %>
+    <%= button_to "Delete", @experiment, method: :delete, class: "btn btn-outline-danger" %>
+  </div>
 <div>
-  <%= link_to "Edit this experiment", edit_experiment_path(@experiment) %> |
-  <%= link_to "Back to experiments", experiments_path %>
 
-  <%= button_to "Destroy this experiment", @experiment, method: :delete %>
+<div class="text-center mb-4">
+  <h1 class="my-3"><%= @experiment.title %></h1>
+  <span class="text-muted">Created by: <%= @experiment.created_by_user.name %></span>
+  <div class="input-group mx-auto my-3" style="width: 200px">
+    <input type="text" class="form-control bg-white" disabled value="<%= @experiment.key %>">
+    <button class="btn btn-outline-primary" type="button" onclick="javascript: navigator.clipboard.writeText('<%= @experiment.key %>')"><i class="bi bi-clipboard"></i></button>
+  </div>
+  <div class="row justify-content-center my-4">
+    <div class="col-12 col-md-8 col-lg-6 text-center mb-2">
+      <div class="card">
+        <div class="card-body">
+          <p><%= @experiment.description %></p>
+          <div class="mb-3">
+            <% if @experiment.approved %>
+              <span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i>Approved</span>
+            <% else %>
+              <span class="badge bg-secondary"><i class="bi bi-clock-fill me-1"></i>Pending review</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-12 col-md-5 mb-3">
+    <strong class="label mb-2 d-block">Javascript:</strong>
+    <div class="p-2 border bg-white rounded">
+      <code><%= simple_format(@experiment.javascript) %></code>
+    </div>
+  </div>
+  <div class="col-12 col-md-5 mb-3">
+    <strong class="label mb-2 d-block">CSS:</strong>
+    <div class="p-2 border bg-white rounded">
+      <code><%= simple_format(@experiment.stylesheet) %></code>
+    </div>
+  </div>
+  </div>
 </div>
