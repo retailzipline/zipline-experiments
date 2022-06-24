@@ -1,42 +1,26 @@
-<div id="<%= dom_id experiment %>">
-  <p>
-    <strong>Title:</strong>
-    <%= experiment.title %>
-  </p>
+<div id="<%= dom_id experiment %>" class="col-12 col-md-6 col-lg-4">
+  <div class="card text-center mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= experiment.title %></h5>
+      <small class="text-muted"><%= experiment.created_by_user.name %></small>
+      <p><%= experiment.description %></p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= experiment.description %>
-  </p>
-
-  <p>
-    <strong>Key:</strong>
-    <%= experiment.key %>
-  </p>
-
-  <p>
-    <strong>Javascript:</strong>
-    <%= experiment.javascript %>
-  </p>
-
-  <p>
-    <strong>Stylesheet:</strong>
-    <%= experiment.stylesheet %>
-  </p>
-
-  <p>
-    <strong>Approved:</strong>
-    <%= experiment.approved %>
-  </p>
-
-  <p>
-    <strong>Created by user:</strong>
-    <%= experiment.created_by_user_id %>
-  </p>
-
-  <p>
-    <strong>Updated by user:</strong>
-    <%= experiment.updated_by_user_id %>
-  </p>
-
+      <div class="mb-3">
+        <% if experiment.approved %>
+          <span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i>Approved</span>
+        <% else %>
+          <span class="badge bg-secondary"><i class="bi bi-clock-fill me-1"></i>Pending review</span>
+        <% end %>
+      </div>
+      <p>
+      <div class="d-flex align-items-center justify-space-between">
+        <div class="input-group me-3">
+          <input type="text" class="form-control bg-white" disabled value="<%= experiment.key %>">
+          <button class="btn btn-outline-primary" type="button" onclick="javascript: navigator.clipboard.writeText('<%= experiment.key %>')"><i class="bi bi-clipboard"></i></button>
+        </div>
+        <%= link_to "View experiment", experiment, class: "btn btn-primary flex-fill flex-shrink-0" %>
+      </div>
+    </p>
+    </div>
+  </div>
 </div>
