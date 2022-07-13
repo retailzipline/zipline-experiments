@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Experiments</h1>
-
-<div id="experiments">
-  <% @experiments.each do |experiment| %>
-    <%= render experiment %>
-    <p>
-      <%= link_to "Show this experiment", experiment %>
-    </p>
-  <% end %>
+<div class="row my-5">
+<div class="col-0 col-md-3"></div>
+<h1 class="text-md-center col-7 col-md-6">Experiments</h1>
+<div class="col-auto col-5 col-md-3 text-end"><%= link_to "New experiment", new_experiment_path, class: "btn btn-primary" %></div>
 </div>
 
-<%= link_to "New experiment", new_experiment_path %>
+<div id="experiments" class="row">
+  <% @experiments.each do |experiment| %>
+    <%= render experiment %>
+  <% end %>
+</div>
