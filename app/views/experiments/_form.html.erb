@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-4">
+    <label class="form-label"><%= form.label :title %></label>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-4">
+    <label class="form-label"><%= form.label :description %></label>
+    <%= form.text_area :description, class: 'form-control', rows: 5 %>
   </div>
 
-  <div>
-    <%= form.label :javascript, style: "display: block" %>
-    <%= form.text_area :javascript %>
+  <div class="mb-4">
+    <label class="form-label"><%= form.label :javascript %></label>
+    <code><%= form.text_area :javascript, class: 'form-control', rows: 12 %></code>
   </div>
 
-  <div>
-    <%= form.label :stylesheet, style: "display: block" %>
-    <%= form.text_area :stylesheet %>
+  <div class="mb-4">
+    <label class="form-label"><%= form.label :stylesheet %></label>
+    <code><%= form.text_area :stylesheet, class: 'form-control', rows: 12 %></code>
   </div>
 
-  <div>
-    <%= form.label :approved, style: "display: block" %>
-    <%= form.check_box :approved %>
+  <div class="mb-4">
+
+    <%= form.check_box :approved ,class: 'form-check-input'%>
+    <label class="form-check-label"><%= form.label :approved %></label>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-flex justify-content-end">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
